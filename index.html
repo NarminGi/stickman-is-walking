@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            height: 100vh;
+        }
+        .road{
+           background-image: url('https://t3.ftcdn.net/jpg/03/09/60/44/360_F_309604437_Xn7I5GsNKEUNwUOJIKQopth8GfilQvxo.jpg');
+           height: 100%;
+           padding: 5vh;
+        }
+        .line{
+            position: relative;
+            border: 5px dashed gray;
+            padding: 5px;
+            height: 100%;
+            padding: 5vh;
+        }
+        .center{
+            background-image: url('https://lpc.opengameart.org/sites/default/files/sand_3_1.png');
+            height: 100%;
+        }
+        .passenger{
+            position: absolute;
+            bottom: -5px;
+            left: -10px;
+            animation: go-up 10s linear 0s 1 normal forwards, go-right 20s linear 10s 1 normal forwards, go-down 10s linear 30s 1 normal forwards, go-left 21s linear 40s 1 normal forwards;
+        }
+        .circle{
+            height: 20px;
+            width: 20px;
+            border: 1px solid brown;
+            border-radius: 50%;
+            background-color: brown;
+        }
+        .cube{
+            height: 21px;
+            width: 21px;
+            background-color: brown;
+        }
+        @keyframes go-up {
+            0% {
+                bottom: -5px;
+            }
+            100% {
+                bottom: calc(100% - 15px);
+                
+            }
+        }
+        @keyframes go-right {
+            0% {
+                left: -10px; 
+                transform: rotate(90deg);
+            }
+            100% {
+                left: calc(100% - 10px);
+                transform: rotate(90deg);
+            }
+        }
+        @keyframes go-down {
+            0% {
+                bottom: calc(100% - 15px);
+                transform: rotate(180deg);
+            }
+            100% {
+                bottom: -5px;
+                transform: rotate(180deg);
+            }
+        }
+        @keyframes go-left {
+            0% {
+                left: calc(100% - 10px);
+                bottom: -20px;
+                transform: rotate(270deg);
+            }
+            99% {
+                left: -15px;
+                bottom: -20px;
+                transform: rotate(270deg);
+            }
+            100% {
+                left: -10px;
+                bottom: -5px;
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="road">
+            <div class="line">
+                <div class="passenger">
+                    <div class="circle"></div>
+                    <div class="cube"></div>
+                </div>
+                <div class="center">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
